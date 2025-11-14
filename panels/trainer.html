@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FitBuddy | Panel Trainer</title>
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/panels.css">
+</head>
+<body class="panel-body">
+    <!-- Header Móvil para Paneles -->
+    <header class="panel-header">
+        <div class="panel-header-content">
+            <button class="icon-btn" id="panelMenuToggle">
+                <i class='bx bx-menu'></i>
+            </button>
+            <div class="panel-title">
+                <h1>Mi Coaching</h1>
+            </div>
+            <div class="user-menu">
+                <button class="icon-btn" id="userMenuToggle">
+                    <i class='bx bx-user'></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Menú Lateral Móvil -->
+    <nav class="panel-nav" id="panelNav">
+        <div class="nav-header">
+            <div class="user-info">
+                <div class="user-avatar-small">EN</div>
+                <div class="user-details">
+                    <h4 id="currentUserName">Entrenador</h4>
+                    <span>Professional Coach</span>
+                </div>
+            </div>
+            <button class="icon-btn" id="closePanelMenu">
+                <i class='bx bx-x'></i>
+            </button>
+        </div>
+        <div class="nav-links">
+            <a href="#inicio" class="nav-link active" data-section="inicio">
+                <i class='bx bx-home'></i>
+                <span>Inicio</span>
+            </a>
+            <a href="#clientes" class="nav-link" data-section="clientes">
+                <i class='bx bx-group'></i>
+                <span>Mis Clientes</span>
+            </a>
+            <a href="#rutinas" class="nav-link" data-section="rutinas">
+                <i class='bx bx-task'></i>
+                <span>Rutinas</span>
+            </a>
+            <a href="#agenda" class="nav-link" data-section="agenda">
+                <i class='bx bx-calendar'></i>
+                <span>Agenda</span>
+            </a>
+            <a href="#ingresos" class="nav-link" data-section="ingresos">
+                <i class='bx bx-dollar'></i>
+                <span>Ingresos</span>
+            </a>
+            <a href="#" class="nav-link logout-link" id="logoutBtn">
+                <i class='bx bx-log-out'></i>
+                <span>Cerrar Sesión</span>
+            </a>
+        </div>
+    </nav>
+
+    <!-- Contenido Principal -->
+    <main class="panel-main">
+        <!-- Inicio Section -->
+        <section id="inicio" class="panel-section active">
+            <div class="welcome-banner">
+                <h2>¡Buen trabajo hoy!</h2>
+                <p>Continúa inspirando a tus clientes</p>
+            </div>
+
+            <!-- Stats del Entrenador -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class='bx bx-group'></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>24</h3>
+                        <p>Clientes Activos</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class='bx bx-check-circle'></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>156</h3>
+                        <p>Sesiones Impartidas</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class='bx bx-star'></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>4.8</h3>
+                        <p>Rating Promedio</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class='bx bx-task'></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>12</h3>
+                        <p>Rutinas Creadas</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Agenda de Hoy -->
+            <div class="content-card">
+                <div class="card-header">
+                    <h3>Agenda de Hoy</h3>
+                    <button class="btn-text">Ver Completa</button>
+                </div>
+                <div class="session-list">
+                    <div class="session-item">
+                        <div class="session-time">
+                            <span>09:00</span>
+                            <small>1h</small>
+                        </div>
+                        <div class="session-info">
+                            <h4>Laura Méndez</h4>
+                            <p>Entrenamiento Personalizado</p>
+                        </div>
+                        <span class="session-status confirmed">Confirmada</span>
+                    </div>
+                    <div class="session-item">
+                        <div class="session-time">
+                            <span>11:00</span>
+                            <small>45m</small>
+                        </div>
+                        <div class="session-info">
+                            <h4>Diego Ramírez</h4>
+                            <p>Asesoría Técnica</p>
+                        </div>
+                        <span class="session-status confirmed">Confirmada</span>
+                    </div>
+                    <div class="session-item">
+                        <div class="session-time">
+                            <span>16:00</span>
+                            <small>1h</small>
+                        </div>
+                        <div class="session-info">
+                            <h4>Sofía Chen</h4>
+                            <p>Sesión de Iniciación</p>
+                        </div>
+                        <span class="session-status pending">Por Llamar</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Clientes Recientes -->
+            <div class="content-card">
+                <div class="card-header">
+                    <h3>Mis Clientes</h3>
+                    <button class="btn-text" onclick="gestionarClientes()">Gestionar</button>
+                </div>
+                <div class="user-list" id="clientsList">
+                    <!-- Clientes cargados por JavaScript -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Otras secciones se cargarán dinámicamente -->
+    </main>
+
+    <!-- Overlay para menús -->
+    <div class="panel-overlay" id="panelOverlay"></div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="../js/users.js"></script>
+    <script src="trainer.js"></script>
+    <script>
+        AOS.init({
+            offset: 50,
+            duration: 800,
+            once: true
+        });
+    </script>
+</body>
+</html>

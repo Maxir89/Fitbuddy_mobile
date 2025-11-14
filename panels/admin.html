@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FitBuddy | Panel Administrador</title>
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/panels.css">
+</head>
+<body class="panel-body">
+    <!-- Header Móvil para Paneles -->
+    <header class="panel-header">
+        <div class="panel-header-content">
+            <button class="icon-btn" id="panelMenuToggle">
+                <i class='bx bx-menu'></i>
+            </button>
+            <div class="panel-title">
+                <h1>Panel Admin</h1>
+            </div>
+            <div class="user-menu">
+                <button class="icon-btn" id="userMenuToggle">
+                    <i class='bx bx-user'></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Menú Lateral Móvil -->
+    <nav class="panel-nav" id="panelNav">
+        <div class="nav-header">
+            <div class="user-info">
+                <div class="user-avatar-small">AD</div>
+                <div class="user-details">
+                    <h4 id="currentUserName">Administrador</h4>
+                    <span>Administrador</span>
+                </div>
+            </div>
+            <button class="icon-btn" id="closePanelMenu">
+                <i class='bx bx-x'></i>
+            </button>
+        </div>
+        <div class="nav-links">
+            <a href="#dashboard" class="nav-link active" data-section="dashboard">
+                <i class='bx bx-dashboard'></i>
+                <span>Dashboard</span>
+            </a>
+            <a href="#usuarios" class="nav-link" data-section="usuarios">
+                <i class='bx bx-group'></i>
+                <span>Usuarios</span>
+            </a>
+            <a href="#entrenadores" class="nav-link" data-section="entrenadores">
+                <i class='bx bx-dumbbell'></i>
+                <span>Entrenadores</span>
+            </a>
+            <a href="#reportes" class="nav-link" data-section="reportes">
+                <i class='bx bx-flag'></i>
+                <span>Reportes</span>
+            </a>
+            <a href="#configuracion" class="nav-link" data-section="configuracion">
+                <i class='bx bx-cog'></i>
+                <span>Configuración</span>
+            </a>
+            <a href="#" class="nav-link logout-link" id="logoutBtn">
+                <i class='bx bx-log-out'></i>
+                <span>Cerrar Sesión</span>
+            </a>
+        </div>
+    </nav>
+
+    <!-- Contenido Principal -->
+    <main class="panel-main">
+        <!-- Dashboard Section -->
+        <section id="dashboard" class="panel-section active">
+            <div class="section-header">
+                <h2>Dashboard General</h2>
+                <p>Resumen de la plataforma FitBuddy</p>
+            </div>
+
+            <!-- Stats Grid -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class='bx bx-group'></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>1,247</h3>
+                        <p>Usuarios Totales</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class='bx bx-dumbbell'></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>89</h3>
+                        <p>Entrenadores Activos</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class='bx bx-star'></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>4.7</h3>
+                        <p>Rating Promedio</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class='bx bx-trending-up'></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>98.2%</h3>
+                        <p>Uptime Plataforma</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Acciones Rápidas -->
+            <div class="quick-actions">
+                <h3>Acciones Rápidas</h3>
+                <div class="actions-grid">
+                    <button class="action-btn" onclick="gestionarUsuarios()">
+                        <i class='bx bx-user-plus'></i>
+                        <span>Crear Usuario</span>
+                    </button>
+                    <button class="action-btn">
+                        <i class='bx bx-message'></i>
+                        <span>Anuncio Global</span>
+                    </button>
+                    <button class="action-btn">
+                        <i class='bx bx-data'></i>
+                        <span>Backup</span>
+                    </button>
+                    <button class="action-btn">
+                        <i class='bx bx-stats'></i>
+                        <span>Reportes</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Usuarios Recientes -->
+            <div class="content-card">
+                <div class="card-header">
+                    <h3>Usuarios Recientes</h3>
+                    <button class="btn-text">Ver Todos</button>
+                </div>
+                <div class="user-list" id="usersList">
+                    <!-- Usuarios cargados por JavaScript -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Otras secciones se cargarán dinámicamente -->
+    </main>
+
+    <!-- Overlay para menús -->
+    <div class="panel-overlay" id="panelOverlay"></div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="../js/users.js"></script>
+    <script src="admin.js"></script>
+    <script>
+        AOS.init({
+            offset: 50,
+            duration: 800,
+            once: true
+        });
+    </script>
+</body>
+</html>

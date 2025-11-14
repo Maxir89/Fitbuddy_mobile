@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FitBuddy | Panel Trainee</title>
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/panels.css">
+</head>
+<body class="panel-body">
+    <!-- Header Móvil para Paneles -->
+    <header class="panel-header">
+        <div class="panel-header-content">
+            <button class="icon-btn" id="panelMenuToggle">
+                <i class='bx bx-menu'></i>
+            </button>
+            <div class="panel-title">
+                <h1>Mi Entrenamiento</h1>
+            </div>
+            <div class="user-menu">
+                <button class="icon-btn" id="userMenuToggle">
+                    <i class='bx bx-user'></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Menú Lateral Móvil -->
+    <nav class="panel-nav" id="panelNav">
+        <div class="nav-header">
+            <div class="user-info">
+                <div class="user-avatar-small">TU</div>
+                <div class="user-details">
+                    <h4 id="currentUserName">Trainee</h4>
+                    <span>Deportista</span>
+                </div>
+            </div>
+            <button class="icon-btn" id="closePanelMenu">
+                <i class='bx bx-x'></i>
+            </button>
+        </div>
+        <div class="nav-links">
+            <a href="#inicio" class="nav-link active" data-section="inicio">
+                <i class='bx bx-home'></i>
+                <span>Inicio</span>
+            </a>
+            <a href="#entrenadores" class="nav-link" data-section="entrenadores">
+                <i class='bx bx-dumbbell'></i>
+                <span>Entrenadores</span>
+            </a>
+            <a href="#rutinas" class="nav-link" data-section="rutinas">
+                <i class='bx bx-task'></i>
+                <span>Mis Rutinas</span>
+            </a>
+            <a href="#compañeros" class="nav-link" data-section="compañeros">
+                <i class='bx bx-group'></i>
+                <span>Compañeros</span>
+            </a>
+            <a href="#progreso" class="nav-link" data-section="progreso">
+                <i class='bx bx-trending-up'></i>
+                <span>Mi Progreso</span>
+            </a>
+            <a href="#" class="nav-link logout-link" id="logoutBtn">
+                <i class='bx bx-log-out'></i>
+                <span>Cerrar Sesión</span>
+            </a>
+        </div>
+    </nav>
+
+    <!-- Contenido Principal -->
+    <main class="panel-main">
+        <!-- Inicio Section -->
+        <section id="inicio" class="panel-section active">
+            <div class="welcome-banner">
+                <h2>¡Bienvenido de vuelta!</h2>
+                <p>Continúa tu journey fitness</p>
+            </div>
+
+            <!-- Stats Personales -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class='bx bx-check-circle'></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>12</h3>
+                        <p>Entrenamientos</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class='bx bx-group'></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>5</h3>
+                        <p>Compañeros</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class='bx bx-task'></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>8</h3>
+                        <p>Rutinas Activas</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class='bx bx-calendar'></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>15</h3>
+                        <p>Días de Racha</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Próximas Sesiones -->
+            <div class="content-card">
+                <div class="card-header">
+                    <h3>Próximas Sesiones</h3>
+                    <button class="btn-text">Ver Agenda</button>
+                </div>
+                <div class="session-list">
+                    <div class="session-item">
+                        <div class="session-time">
+                            <span>18:00</span>
+                            <small>Hoy</small>
+                        </div>
+                        <div class="session-info">
+                            <h4>Entrenamiento con Carlos</h4>
+                            <p>Running · Parque Central</p>
+                        </div>
+                        <span class="session-status confirmed">Confirmado</span>
+                    </div>
+                    <div class="session-item">
+                        <div class="session-time">
+                            <span>07:00</span>
+                            <small>Mañana</small>
+                        </div>
+                        <div class="session-info">
+                            <h4>Running Grupal</h4>
+                            <p>5K · Lago City</p>
+                        </div>
+                        <span class="session-status confirmed">Confirmado</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Entrenadores Sugeridos -->
+            <div class="content-card">
+                <div class="card-header">
+                    <h3>Entrenadores Disponibles</h3>
+                    <button class="btn-text" onclick="buscarEntrenadores()">Ver Más</button>
+                </div>
+                <div class="user-list" id="trainersList">
+                    <!-- Entrenadores cargados por JavaScript -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Otras secciones se cargarán dinámicamente -->
+    </main>
+
+    <!-- Overlay para menús -->
+    <div class="panel-overlay" id="panelOverlay"></div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="../js/users.js"></script>
+    <script src="trainee.js"></script>
+    <script>
+        AOS.init({
+            offset: 50,
+            duration: 800,
+            once: true
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FitBuddy - Tu compañero de entrenamiento</title>
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/auth.css">
+</head>
+<body>
+    <!-- Header Móvil -->
+    <header class="mobile-header">
+        <div class="header-content">
+            <div class="logo">
+                <span>FitBuddy</span>
+            </div>
+            <div class="header-actions">
+                <button class="icon-btn" id="menuToggle">
+                    <i class='bx bx-menu'></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Menú Móvil -->
+    <nav class="mobile-nav" id="mobileNav">
+        <div class="nav-header">
+            <span>Menú</span>
+            <button class="icon-btn" id="closeMenu">
+                <i class='bx bx-x'></i>
+            </button>
+        </div>
+        <div class="nav-links">
+            <a href="#inicio" class="nav-link active">
+                <i class='bx bx-home'></i>
+                <span>Inicio</span>
+            </a>
+            <a href="auth/login.html" class="nav-link">
+                <i class='bx bx-log-in'></i>
+                <span>Iniciar Sesión</span>
+            </a>
+            <a href="auth/register.html" class="nav-link">
+                <i class='bx bx-user-plus'></i>
+                <span>Registrarse</span>
+            </a>
+            <a href="#beneficios" class="nav-link">
+                <i class='bx bx-star'></i>
+                <span>Beneficios</span>
+            </a>
+            <a href="#testimonios" class="nav-link">
+                <i class='bx bx-chat'></i>
+                <span>Testimonios</span>
+            </a>
+        </div>
+    </nav>
+
+    <!-- Overlay para menú -->
+    <div class="overlay" id="overlay"></div>
+
+    <!-- Hero Section -->
+    <section class="hero" id="inicio">
+        <div class="hero-content">
+            <div class="hero-text" data-aos="fade-up">
+                <h1>Conecta, entrena, <span>evoluciona</span></h1>
+                <p>Encuentra tu compañero perfecto de entrenamiento y alcanza tus metas juntos</p>
+                <div class="hero-buttons">
+                    <a href="auth/register.html" class="btn btn-primary">
+                        <span>Comenzar Ahora</span>
+                        <i class='bx bx-chevron-right'></i>
+                    </a>
+                    <a href="auth/login.html" class="btn btn-secondary">
+                        <span>Ya tengo cuenta</span>
+                    </a>
+                </div>
+            </div>
+            <div class="hero-visual" data-aos="fade-left">
+                <div class="app-preview">
+                    <div class="phone-mockup">
+                        <div class="phone-screen">
+                            <div class="app-interface">
+                                <div class="app-header">
+                                    <span>FitBuddy</span>
+                                    <i class='bx bx-wifi'></i>
+                                </div>
+                                <div class="app-content">
+                                    <div class="activity-card">
+                                        <div class="activity-icon">
+                                            <i class='bx bx-run'></i>
+                                        </div>
+                                        <div class="activity-info">
+                                            <h4>Running Grupal</h4>
+                                            <p>Parque Central - 18:00</p>
+                                        </div>
+                                        <span class="badge">5 personas</span>
+                                    </div>
+                                    <div class="activity-card">
+                                        <div class="activity-icon">
+                                            <i class='bx bx-dumbbell'></i>
+                                        </div>
+                                        <div class="activity-info">
+                                            <h4>Gym Session</h4>
+                                            <p>FitCenter - 20:00</p>
+                                        </div>
+                                        <span class="badge">3 personas</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Beneficios -->
+    <section class="benefits" id="beneficios">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2>¿Por qué elegir FitBuddy?</h2>
+                <p>La plataforma que conecta deportistas y transforma entrenamientos</p>
+            </div>
+            <div class="benefits-grid">
+                <div class="benefit-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="benefit-icon">
+                        <i class='bx bx-group'></i>
+                    </div>
+                    <h3>Comunidad Activa</h3>
+                    <p>Conecta con miles de deportistas cerca de ti y entrena en grupo</p>
+                </div>
+                <div class="benefit-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="benefit-icon">
+                        <i class='bx bx-trending-up'></i>
+                    </div>
+                    <h3>Progreso Medible</h3>
+                    <p>Seguimiento detallado de tus métricas y mejoras continuas</p>
+                </div>
+                <div class="benefit-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="benefit-icon">
+                        <i class='bx bx-calendar'></i>
+                    </div>
+                    <h3>Planificación Inteligente</h3>
+                    <p>Rutinas personalizadas y recordatorios automáticos</p>
+                </div>
+                <div class="benefit-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="benefit-icon">
+                        <i class='bx bx-chat'></i>
+                    </div>
+                    <h3>Chat Integrado</h3>
+                    <p>Comunícate fácilmente con tu buddy o entrenador</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonios -->
+    <section class="testimonials" id="testimonios">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2>Lo que dicen nuestros usuarios</h2>
+                <p>Experiencias reales de la comunidad FitBuddy</p>
+            </div>
+            <div class="testimonials-slider">
+                <div class="testimonial-card" data-aos="fade-up">
+                    <div class="testimonial-content">
+                        <p>"Gracias a FitBuddy encontré mi compañera de running perfecta. Hemos corrido 3 maratones juntas!"</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">MC</div>
+                        <div class="author-info">
+                            <h4>María Cortés</h4>
+                            <span>Runner · 2 años en FitBuddy</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="testimonial-content">
+                        <p>"Como entrenador, he podido expandir mi clientela y ayudar a más personas a alcanzar sus metas."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">CR</div>
+                        <div class="author-info">
+                            <h4>Carlos Ramírez</h4>
+                            <span>Entrenador · 1 año en FitBuddy</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Final -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content" data-aos="zoom-in">
+                <h2>¿Listo para comenzar?</h2>
+                <p>Únete a la comunidad fitness más activa y conecta con tu buddy perfecto</p>
+                <div class="cta-buttons">
+                    <a href="auth/register.html" class="btn btn-primary btn-large">
+                        <span>Crear Cuenta Gratis</span>
+                        <i class='bx bx-chevron-right'></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="logo">FitBuddy</div>
+                    <p>Conectando deportistas, transformando vidas</p>
+                </div>
+                <div class="footer-links">
+                    <a href="#inicio">Inicio</a>
+                    <a href="#beneficios">Beneficios</a>
+                    <a href="#testimonios">Testimonios</a>
+                    <a href="auth/login.html">Iniciar Sesión</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 FitBuddy. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            offset: 50,
+            duration: 800,
+            once: true
+        });
+
+        // Menú móvil
+        const menuToggle = document.getElementById('menuToggle');
+        const closeMenu = document.getElementById('closeMenu');
+        const mobileNav = document.getElementById('mobileNav');
+        const overlay = document.getElementById('overlay');
+
+        function toggleMenu() {
+            mobileNav.classList.toggle('active');
+            overlay.classList.toggle('active');
+        }
+
+        menuToggle.addEventListener('click', toggleMenu);
+        closeMenu.addEventListener('click', toggleMenu);
+        overlay.addEventListener('click', toggleMenu);
+    </script>
+</body>
+</html>

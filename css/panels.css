@@ -1,0 +1,566 @@
+/* ================== PANEL STYLES MOBILE FIRST ================== */
+:root {
+  --bg-color: #000;
+  --second-bg-color: #111;
+  --text-color: #fff;
+  --main-color: #45ffca;
+  --success-color: #45ff75;
+  --warning-color: #ffd145;
+  --danger-color: #ff4545;
+  --gradient: linear-gradient(135deg, #45ffca 0%, #6effe0 100%);
+  --card-bg: rgba(255, 255, 255, 0.05);
+  --border-radius: 1.5rem;
+  --shadow: 0 10px 30px rgba(69, 255, 202, 0.15);
+}
+
+.panel-body {
+  background: var(--bg-color);
+  color: var(--text-color);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* ================== PANEL HEADER ================== */
+.panel-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.95);
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+  padding: 1.5rem 2rem;
+  border-bottom: 1px solid rgba(69, 255, 202, 0.1);
+}
+
+.panel-header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.panel-title h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  background: var(--gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ================== PANEL NAVIGATION ================== */
+.panel-nav {
+  position: fixed;
+  top: 0;
+  left: -100%;
+  width: 280px;
+  height: 100vh;
+  background: var(--second-bg-color);
+  z-index: 1001;
+  transition: left 0.3s ease;
+  border-right: 1px solid rgba(69, 255, 202, 0.1);
+  display: flex;
+  flex-direction: column;
+}
+
+.panel-nav.active {
+  left: 0;
+}
+
+.nav-header {
+  padding: 2rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.user-avatar-small {
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+  background: var(--gradient);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  color: var(--bg-color);
+  font-size: 1.6rem;
+}
+
+.user-details h4 {
+  font-size: 1.6rem;
+  margin-bottom: 0.5rem;
+}
+
+.user-details span {
+  font-size: 1.3rem;
+  color: var(--main-color);
+  background: rgba(69, 255, 202, 0.1);
+  padding: 0.3rem 1rem;
+  border-radius: 1rem;
+}
+
+.nav-links {
+  flex: 1;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1.5rem;
+  color: var(--text-color);
+  font-size: 1.6rem;
+  border-radius: var(--border-radius);
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.nav-link i {
+  font-size: 2rem;
+  color: var(--main-color);
+  width: 2.5rem;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  background: rgba(69, 255, 202, 0.1);
+  color: var(--main-color);
+}
+
+.logout-link {
+  margin-top: auto;
+  background: rgba(255, 69, 69, 0.1);
+  color: var(--danger-color);
+}
+
+.logout-link i {
+  color: var(--danger-color);
+}
+
+.logout-link:hover {
+  background: var(--danger-color);
+  color: var(--text-color);
+}
+
+/* ================== MAIN CONTENT ================== */
+.panel-main {
+  margin-top: 7rem;
+  padding: 2rem;
+  min-height: calc(100vh - 7rem);
+}
+
+.panel-section {
+  display: none;
+}
+
+.panel-section.active {
+  display: block;
+}
+
+/* ================== OVERLAY ================== */
+.panel-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(5px);
+  z-index: 999;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+.panel-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* ================== CONTENT CARDS ================== */
+.content-card {
+  background: var(--card-bg);
+  border-radius: var(--border-radius);
+  padding: 2rem;
+  margin-bottom: 2rem;
+  border: 1px solid rgba(69, 255, 202, 0.1);
+  transition: all 0.3s ease;
+}
+
+.content-card:hover {
+  border-color: var(--main-color);
+  box-shadow: var(--shadow);
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.card-header h3 {
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.btn-text {
+  background: transparent;
+  color: var(--main-color);
+  border: none;
+  font-size: 1.4rem;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  border-radius: 0.8rem;
+  transition: all 0.3s ease;
+}
+
+.btn-text:hover {
+  background: rgba(69, 255, 202, 0.1);
+}
+
+/* ================== STATS GRID ================== */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.stat-card {
+  background: var(--card-bg);
+  border-radius: var(--border-radius);
+  padding: 2rem;
+  border: 1px solid rgba(69, 255, 202, 0.1);
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.stat-card:hover {
+  border-color: var(--main-color);
+  transform: translateY(-2px);
+}
+
+.stat-icon {
+  width: 5rem;
+  height: 5rem;
+  background: var(--gradient);
+  border-radius: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5rem;
+  color: var(--bg-color);
+}
+
+.stat-info h3 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  background: var(--gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.stat-info p {
+  font-size: 1.3rem;
+  color: #ccc;
+}
+
+/* ================== USER LISTS ================== */
+.user-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.user-item {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 1.2rem;
+  border: 1px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.user-item:hover {
+  background: rgba(69, 255, 202, 0.05);
+  border-color: rgba(69, 255, 202, 0.2);
+  transform: translateX(5px);
+}
+
+.user-avatar-xs {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  background: var(--gradient);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  color: var(--bg-color);
+  font-size: 1.4rem;
+}
+
+.user-item-info h4 {
+  font-size: 1.6rem;
+  margin-bottom: 0.3rem;
+}
+
+.user-item-info p {
+  font-size: 1.3rem;
+  color: #ccc;
+}
+
+.user-status {
+  margin-left: auto;
+  padding: 0.5rem 1rem;
+  border-radius: 1rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.status-online {
+  background: rgba(69, 255, 117, 0.2);
+  color: var(--success-color);
+  border: 1px solid var(--success-color);
+}
+
+.status-offline {
+  background: rgba(255, 255, 255, 0.1);
+  color: #ccc;
+  border: 1px solid #ccc;
+}
+
+.status-busy {
+  background: rgba(255, 69, 69, 0.2);
+  color: var(--danger-color);
+  border: 1px solid var(--danger-color);
+}
+
+/* ================== SESSION LISTS ================== */
+.session-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.session-item {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 1.2rem;
+  border: 1px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.session-item:hover {
+  border-color: rgba(69, 255, 202, 0.2);
+}
+
+.session-time {
+  text-align: center;
+  min-width: 6rem;
+}
+
+.session-time span {
+  display: block;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--main-color);
+}
+
+.session-time small {
+  font-size: 1.2rem;
+  color: #ccc;
+}
+
+.session-info {
+  flex: 1;
+}
+
+.session-info h4 {
+  font-size: 1.6rem;
+  margin-bottom: 0.3rem;
+}
+
+.session-info p {
+  font-size: 1.3rem;
+  color: #ccc;
+}
+
+.session-status {
+  padding: 0.5rem 1rem;
+  border-radius: 1rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.session-status.confirmed {
+  background: rgba(69, 255, 117, 0.2);
+  color: var(--success-color);
+  border: 1px solid var(--success-color);
+}
+
+.session-status.pending {
+  background: rgba(255, 209, 69, 0.2);
+  color: var(--warning-color);
+  border: 1px solid var(--warning-color);
+}
+
+/* ================== QUICK ACTIONS ================== */
+.quick-actions {
+  margin-bottom: 3rem;
+}
+
+.quick-actions h3 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+}
+
+.actions-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.action-btn {
+  background: var(--card-bg);
+  border: 1px solid rgba(69, 255, 202, 0.1);
+  border-radius: var(--border-radius);
+  padding: 2rem 1.5rem;
+  color: var(--text-color);
+  font-size: 1.4rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.action-btn i {
+  font-size: 2.5rem;
+  color: var(--main-color);
+}
+
+.action-btn:hover {
+  border-color: var(--main-color);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow);
+}
+
+/* ================== WELCOME BANNER ================== */
+.welcome-banner {
+  background: var(--gradient);
+  color: var(--bg-color);
+  padding: 3rem 2rem;
+  border-radius: var(--border-radius);
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.welcome-banner h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.welcome-banner p {
+  font-size: 1.6rem;
+  opacity: 0.9;
+}
+
+/* ================== SECTION HEADER ================== */
+.section-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.section-header h2 {
+  font-size: 2.8rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  background: var(--gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.section-header p {
+  font-size: 1.6rem;
+  color: #ccc;
+}
+
+/* ================== RESPONSIVE DESIGN ================== */
+@media (min-width: 768px) {
+  .panel-nav {
+    width: 320px;
+  }
+  
+  .stats-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  
+  .actions-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  
+  .panel-main {
+    margin-left: 0;
+    padding: 3rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .panel-nav {
+    position: static;
+    width: 300px;
+    height: 100vh;
+  }
+  
+  .panel-main {
+    margin-left: 300px;
+    margin-top: 0;
+    padding: 3rem;
+  }
+  
+  .panel-header {
+    display: none;
+  }
+}
+
+/* ================== UTILITIES ================== */
+.mb-3 {
+  margin-bottom: 3rem;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.hidden {
+  display: none !important;
+}
